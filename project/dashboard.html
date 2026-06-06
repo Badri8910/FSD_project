@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Dashboard - College Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark position-sticky top-0 z-3">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="https://dummyimage.com/40x40/0d6efd/ffffff&text=C" width="40" height="40" alt="College Logo" class="rounded" />
+        <span class="fw-semibold">College Portal</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#courses">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="dashboard.html">Dashboard</a></li>
+              <li><a class="dropdown-item" href="register.html">Register</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="btn btn-primary" href="register.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+    <div class="row g-4">
+      <div class="col-12">
+        <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-2">
+          <div>
+            <h1 class="h3 fw-bold mb-1">Student Dashboard</h1>
+            <p class="text-white-50 mb-0">Statistics, attendance table, and quick search.</p>
+          </div>
+          <div class="d-flex gap-2">
+            <a class="btn btn-outline-light" href="profile.html">View Profile</a>
+            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#detailsModal">Placements</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Statistics Cards -->
+      <div class="col-12">
+        <div class="row g-3">
+          <div class="col-6 col-lg-3">
+            <div class="card h-100">
+              <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div>
+                    <div class="text-white-50">Total Students</div>
+                    <div class="display-6 fw-bold">120</div>
+                  </div>
+                  <span class="badge rounded-pill text-bg-primary">All</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="card h-100">
+              <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div>
+                    <div class="text-white-50">Present Students</div>
+                    <div class="display-6 fw-bold">95</div>
+                  </div>
+                  <span class="badge rounded-pill text-bg-success">Present</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="card h-100">
+              <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div>
+                    <div class="text-white-50">Absent Students</div>
+                    <div class="display-6 fw-bold">25</div>
+                  </div>
+                  <span class="badge rounded-pill text-bg-danger">Absent</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="card h-100">
+              <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div>
+                    <div class="text-white-50">Placements</div>
+                    <div class="display-6 fw-bold">18</div>
+                  </div>
+                  <span class="badge rounded-pill text-bg-warning">Offers</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search + Table -->
+      <div class="col-12">
+        <div class="row g-4 align-items-start">
+          <div class="col-12 col-lg-8">
+            <div class="card border-0" style="background: rgba(255,255,255,0.04);">
+              <div class="card-body p-4">
+                <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-2 mb-3">
+                  <h2 class="h5 fw-bold mb-0">Attendance</h2>
+                  <div class="w-100 w-sm-auto">
+                    <div class="input-group">
+                      <span class="input-group-text bg-dark text-white">🔎</span>
+                      <input id="searchBox" class="form-control" type="search" placeholder="Search by roll no, name, branch" aria-label="Search">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="table-responsive">
+                  <table class="table table-hover align-middle" id="studentsTable">
+                    <thead>
+                      <tr>
+                        <th>Roll No</th>
+                        <th>Name</th>
+                        <th>Branch</th>
+                        <th>Attendance</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>101</td>
+                        <td>Aarav Sharma</td>
+                        <td>Computer Science</td>
+                        <td><span class="badge text-bg-success">Present</span></td>
+                      </tr>
+                      <tr>
+                        <td>102</td>
+                        <td>Diya Patel</td>
+                        <td>Information Technology</td>
+                        <td><span class="badge text-bg-danger">Absent</span></td>
+                      </tr>
+                      <tr>
+                        <td>103</td>
+                        <td>Vihaan Mehta</td>
+                        <td>Electronics</td>
+                        <td><span class="badge text-bg-success">Present</span></td>
+                      </tr>
+                      <tr>
+                        <td>104</td>
+                        <td>Myra Singh</td>
+                        <td>Civil Engineering</td>
+                        <td><span class="badge text-bg-success">Present</span></td>
+                      </tr>
+                      <tr>
+                        <td>105</td>
+                        <td>Rohan Verma</td>
+                        <td>Mechanical Engineering</td>
+                        <td><span class="badge text-bg-danger">Absent</span></td>
+                      </tr>
+                      <tr>
+                        <td>106</td>
+                        <td>Aria Kapoor</td>
+                        <td>Computer Science</td>
+                        <td><span class="badge text-bg-success">Present</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="alert alert-warning border-0 mt-3 mb-0 d-none" id="noResultsAlert" role="alert">
+                  No students match your search.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion -->
+          <div class="col-12 col-lg-4">
+            <div class="card border-0" style="background: rgba(255,255,255,0.04);">
+              <div class="card-body p-4">
+                <h2 class="h5 fw-bold">Quick Info</h2>
+                <div class="accordion mt-3" id="dashboardAccordion">
+                  <div class="accordion-item bg-dark bg-opacity-25 border border-light border-opacity-25 text-white">
+                    <h2 class="accordion-header" id="da1">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dc1" aria-expanded="false" aria-controls="dc1">
+                        Attendance meaning
+                      </button>
+                    </h2>
+                    <div id="dc1" class="accordion-collapse collapse" aria-labelledby="da1" data-bs-parent="#dashboardAccordion">
+                      <div class="accordion-body text-white-50">
+                        “Present” indicates the student attended today’s session.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item bg-dark bg-opacity-25 border border-light border-opacity-25 text-white">
+                    <h2 class="accordion-header" id="da2">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dc2" aria-expanded="false" aria-controls="dc2">
+                        Table search
+                      </button>
+                    </h2>
+                    <div id="dc2" class="accordion-collapse collapse" aria-labelledby="da2" data-bs-parent="#dashboardAccordion">
+                      <div class="accordion-body text-white-50">
+                        Use the search box to filter by roll no, student name, or branch.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <hr class="border-light border-opacity-25 my-4" />
+
+                <div class="d-flex flex-column gap-2">
+                  <span class="badge rounded-pill text-bg-primary">Cards</span>
+                  <span class="badge rounded-pill text-bg-success">Tables</span>
+                  <span class="badge rounded-pill text-bg-warning">Badges</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Placements Modal (Mandatory elsewhere) -->
+  <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title" id="detailsModalLabel">Placements</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-white-50 mb-0">
+            Current placement offers are shown as a statistic card. In a real project, this would load live placement data.
+          </p>
+        </div>
+        <div class="modal-footer border-secondary">
+          <a class="btn btn-outline-light" href="contact.html">Contact Admin</a>
+          <button class="btn btn-primary" type="button" data-bs-dismiss="modal">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer text-white mt-4">
+    <div class="container py-4">
+      <div class="row g-3 align-items-center">
+        <div class="col-12 col-md-6">
+          <div class="fw-semibold">© <span id="year"></span> College Portal. All rights reserved.</div>
+          <div class="text-white-50 small">Student Management • Responsive Bootstrap 5</div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="d-flex justify-content-md-end gap-3">
+            <a class="link-light" href="#" aria-label="Facebook">Facebook</a>
+            <a class="link-light" href="#" aria-label="Twitter">Twitter</a>
+            <a class="link-light" href="#" aria-label="Instagram">Instagram</a>
+            <a class="link-light" href="#" aria-label="LinkedIn">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
