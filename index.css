@@ -1,0 +1,23 @@
+body{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: #f7f9fc;
+}
+
+/* Portal-specific styling (Bootstrap remains primary) */
+.hero{
+    background: radial-gradient(1200px 500px at 10% 10%, rgba(13, 110, 253, 0.10), transparent 55%),
+                radial-gradient(900px 450px at 90% 20%, rgba(25, 135, 84, 0.10), transparent 55%);
+}
+
+.site-footer{
+    background: #0b2a3d !important;
+}
+
+.feature-card img{
+    object-fit: cover;
+}
+
+.stat-card{
+    background: #ffffff;
+}
+

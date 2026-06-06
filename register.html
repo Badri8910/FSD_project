@@ -1,50 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Registration</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Registration | Student Management Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css" />
 </head>
 <body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="logo.svg" alt="Logo" width="38" height="38" class="rounded" />
+        <span class="fw-semibold">Student Management</span>
+      </a>
 
-    <h1>User Registration</h1>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <form action="">
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
 
-        <label for="name">Full Name :</label>
-        <input type="text" id="name" placeholder="Enter your full name">
-        <br><br>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="coursesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Courses
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="coursesDropdown">
+              <li><a class="dropdown-item" href="#">B.Tech</a></li>
+              <li><a class="dropdown-item" href="#">B.Sc</a></li>
+              <li><a class="dropdown-item" href="#">MBA</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">All Courses</a></li>
+            </ul>
+          </li>
 
-        <label for="flat">Flat / House Number :</label>
-        <input type="text" id="flat" placeholder="Enter flat number">
-        <br><br>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
 
-        <label for="email">Email :</label>
-        <input type="email" id="email" placeholder="Enter your email">
-        <br><br>
+        <div class="d-flex gap-2 ms-lg-3">
+          <a href="login.html" class="btn btn-outline-light btn-sm">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-        <label for="mobile">Mobile Number :</label>
-        <input type="tel" id="mobile" placeholder="Enter mobile number">
-        <br><br>
+  <main class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+        <div class="col-12 col-lg-4">
+          <div class="card shadow-sm border-0">
+            <div class="card-body">
+              <h1 class="h4 mb-2">Student Registration</h1>
+              <p class="text-muted mb-0">All required fields are validated on the client side.</p>
+              <hr class="my-4" />
+              <div class="d-flex flex-column gap-2">
+                <span class="badge text-bg-primary">Email format</span>
+                <span class="badge text-bg-success">10-digit mobile</span>
+                <span class="badge text-bg-warning text-dark">Terms & Conditions</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <label for="password">Password :</label>
-        <input type="password" id="password" placeholder="Enter password">
-        <br><br>
+        <div class="col-12 col-lg-8">
+          <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+              <div id="successAlert" class="alert alert-success d-none" role="alert">
+                Registration submitted successfully (demo).
+              </div>
 
-        <label for="confirmPassword">Confirm Password :</label>
-        <input type="password" id="confirmPassword" placeholder="Confirm password">
-        <br><br>
+              <form class="needs-validation" id="registrationForm" novalidate>
+                <div class="row g-3">
+                  <div class="col-12 col-md-6">
+                    <label for="fullName" class="form-label">Full Name *</label>
+                    <input type="text" class="form-control" id="fullName" required minlength="2" />
+                    <div class="invalid-feedback">Please enter your full name.</div>
+                  </div>
 
-        <label>Resident Type :</label>
-        <input type="radio" id="owner" name="residentType">
-        <label for="owner">Owner</label>
+                  <div class="col-12 col-md-6">
+                    <label for="rollNumber" class="form-label">Roll Number *</label>
+                    <div class="input-group">
+                      <span class="input-group-text">RN</span>
+                      <input type="text" class="form-control" id="rollNumber" required pattern="[0-9A-Za-z-]{3,}" />
+                      <div class="invalid-feedback">Please enter a valid roll number.</div>
+                    </div>
+                  </div>
 
-        <input type="radio" id="tenant" name="residentType">
-        <label for="tenant">Tenant</label>
-        <br><br>
+                  <div class="col-12 col-md-6">
+                    <label for="email" class="form-label">Email *</label>
+                    <input type="email" class="form-control" id="email" required />
+                    <div class="invalid-feedback">Please provide a valid email.</div>
+                  </div>
 
-        <input type="submit" value="Register">
-    </form>
+                  <div class="col-12 col-md-6">
+                    <label for="mobile" class="form-label">Mobile Number *</label>
+                    <div class="input-group">
+                      <span class="input-group-text">+91</span>
+                      <input type="tel" class="form-control" id="mobile" required inputmode="numeric" pattern="^[0-9]{10}$" maxlength="10" />
+                      <div class="invalid-feedback">Mobile must be exactly 10 digits.</div>
+                    </div>
+                  </div>
 
+                  <div class="col-12">
+                    <label class="form-label">Gender *</label>
+                    <div class="row g-2">
+                      <div class="col-6 col-md-3">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="gender" id="genderMale" value="Male" required />
+                          <label class="form-check-label" for="genderMale">Male</label>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="Female" />
+                          <label class="form-check-label" for="genderFemale">Female</label>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="gender" id="genderOther" value="Other" />
+                          <label class="form-check-label" for="genderOther">Other</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="invalid-feedback d-block">Please select a gender.</div>
+                  </div>
+
+                  <div class="col-12 col-md-6">
+                    <label for="branch" class="form-label">Branch *</label>
+                    <select class="form-select" id="branch" required>
+                      <option value="" selected disabled>Select Branch</option>
+                      <option>Computer Science</option>
+                      <option>Electrical Engineering</option>
+                      <option>Mechanical Engineering</option>
+                      <option>Information Technology</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a branch.</div>
+                  </div>
+
+                  <div class="col-12 col-md-6">
+                    <label for="dob" class="form-label">Date of Birth *</label>
+                    <input type="date" class="form-control" id="dob" required />
+                    <div class="invalid-feedback">Please select your date of birth.</div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="address" class="form-label">Address *</label>
+                    <textarea class="form-control" id="address" rows="3" required></textarea>
+                    <div class="invalid-feedback">Please enter your address.</div>
+                  </div>
+
+                  <div class="col-12 col-md-6">
+                    <label for="photo" class="form-label">Upload Photo *</label>
+                    <input class="form-control" type="file" id="photo" accept="image/*" required />
+                    <div class="invalid-feedback">Please upload a photo.</div>
+                  </div>
+
+                  <div class="col-12 col-md-6 d-flex align-items-end">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="agree" id="terms" required />
+                      <label class="form-check-label" for="terms">
+                        I agree to the <a href="#" class="link-primary">Terms & Conditions</a> *
+                      </label>
+                      <div class="invalid-feedback">You must agree before submitting.</div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 d-flex flex-column flex-sm-row gap-2 mt-2">
+                    <button class="btn btn-primary" type="submit">Register Student</button>
+                    <a class="btn btn-outline-secondary" href="dashboard.html">Go to Dashboard</a>
+                  </div>
+
+                  <div class="col-12 mt-2">
+                    <small class="text-muted">* Demo form: no backend connected.</small>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer py-4 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2">
+        <div>&copy; <span id="year"></span> College Student Management Portal. All rights reserved.</div>
+        <div class="d-flex gap-3">
+          <a class="link-light text-decoration-none" href="#">Facebook</a>
+          <a class="link-light text-decoration-none" href="#">Twitter</a>
+          <a class="link-light text-decoration-none" href="#">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUDb3m9d8m7gY4vXhGJY8zQ6vGg7oG9pN9/1" crossorigin="anonymous"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    (function () {
+      const form = document.getElementById('registrationForm');
+      const alertWrap = document.getElementById('successAlert');
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (!form.checkValidity()) {
+          form.classList.add('was-validated');
+          return;
+        }
+
+        form.classList.add('was-validated');
+        alertWrap.classList.remove('d-none');
+      });
+    })();
+  </script>
 </body>
 </html>
+
