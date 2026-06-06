@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registration - EduPulse Institute</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="./index.html">
+        <span class="brand-logo" aria-hidden="true">📘</span>
+        <span>EduPulse</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample" aria-controls="navbarsExample" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="./courses.html">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="./about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="mb-4">
+            <h1 class="fw-bold">Student Registration</h1>
+            <p class="text-muted mb-0">Fill in your details to register for your chosen course.</p>
+          </div>
+
+          <div id="successAlert" class="alert alert-success d-none" role="alert">
+            Registration successful! We’ll contact you soon.
+          </div>
+
+          <form id="registrationForm" class="card shadow-sm p-4">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="studentName" class="form-label">Student Name</label>
+                <input type="text" class="form-control" id="studentName" name="studentName" required />
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required />
+              </div>
+
+              <div class="col-md-6">
+                <label for="mobile" class="form-label">Mobile Number</label>
+                <input type="tel" class="form-control" id="mobile" name="mobile" required />
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Gender</label>
+                <div class="d-flex gap-3 flex-wrap">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="genderMale" value="Male" required>
+                    <label class="form-check-label" for="genderMale">Male</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="Female" required>
+                    <label class="form-check-label" for="genderFemale">Female</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="genderOther" value="Other" required>
+                    <label class="form-check-label" for="genderOther">Other</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="course" class="form-label">Course Selection</label>
+                <select class="form-select" id="course" name="course" required>
+                  <option value="">Choose a course</option>
+                  <option>Web Development</option>
+                  <option>Python Programming</option>
+                  <option>Data Science</option>
+                  <option>AI & Machine Learning</option>
+                  <option>Java Programming</option>
+                  <option>Cloud Computing</option>
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label for="qualification" class="form-label">Qualification</label>
+                <input type="text" class="form-control" id="qualification" name="qualification" placeholder="e.g., B.Tech, M.Tech, Diploma" required />
+              </div>
+
+              <div class="col-12">
+                <label for="address" class="form-label">Address</label>
+                <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+              </div>
+
+              <div class="col-12">
+                <label for="resume" class="form-label">Upload Resume</label>
+                <input class="form-control" type="file" id="resume" name="resume" accept="application/pdf,.pdf,image/*,.doc,.docx" required />
+                <div class="form-text">Accepted formats: PDF, DOC, DOCX (max size is not enforced in this demo).</div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="yes" id="terms" required />
+                  <label class="form-check-label" for="terms">
+                    I agree to the Terms & Conditions.
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-12 d-flex gap-2 flex-wrap">
+                <button type="submit" class="btn btn-primary">Submit Registration</button>
+                <button type="reset" class="btn btn-outline-secondary">Reset</button>
+              </div>
+            </div>
+          </form>
+
+          <div class="mt-3 text-muted small">
+            Note: This is a front-end demo. Submitted data is not sent to a server.
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-5">
+          <h5 class="fw-bold">EduPulse Institute</h5>
+          <p class="text-muted mb-0">Training you need. Projects you’ll be proud of.</p>
+        </div>
+        <div class="col-md-3">
+          <h6 class="fw-semibold">Address</h6>
+          <p class="text-muted mb-0">42, Tech Avenue, Hyderabad, TG 500081</p>
+        </div>
+        <div class="col-md-4">
+          <h6 class="fw-semibold">Contact</h6>
+          <p class="text-muted mb-1">Phone: +91 98765 43210</p>
+          <p class="text-muted mb-3">Email: hello@edupulse.edu</p>
+          <div class="social-links">
+            <a class="social" href="#" aria-label="Facebook">Facebook</a>
+            <a class="social" href="#" aria-label="Twitter">Twitter</a>
+            <a class="social" href="#" aria-label="LinkedIn">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-top mt-4 pt-3 d-flex flex-wrap justify-content-between gap-2">
+        <span class="text-muted">© <span id="year"></span> EduPulse. All rights reserved.</span>
+        <span class="text-muted">Built with Bootstrap</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
+

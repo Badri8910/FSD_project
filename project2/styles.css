@@ -1,0 +1,89 @@
+/* Shared styles for the Online Course Registration Portal */
+
+:root{
+  --brand:#4f46e5;
+}
+
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Hero */
+.hero{
+  min-height: 68vh;
+  display:flex;
+  align-items:center;
+  color:#fff;
+  position:relative;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.6), rgba(0,0,0,.15)),
+    url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=60') center/cover no-repeat;
+}
+
+.hero-overlay{ /* kept for future adjustments */ }
+
+.hero-content{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.brand-logo{
+  font-size: 1.35rem;
+}
+
+/* Footer */
+.footer{
+  background:#0b1220;
+  color:#cbd5e1;
+  padding: 2.5rem 0;
+  margin-top: 3rem;
+}
+.footer a.social{
+  color:#cbd5e1;
+  text-decoration:none;
+  margin-right: 12px;
+}
+.footer a.social:hover{
+  color:#fff;
+  text-decoration:underline;
+}
+
+/* Course cards */
+.course-card img{
+  height: 175px;
+  object-fit: cover;
+}
+
+/* Testimonials */
+.testimonial .avatar{
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+}
+
+/* About map placeholder */
+.map-placeholder{
+  height: 280px;
+  background: #f1f5f9;
+  position: relative;
+}
+.map-inner{
+  position:absolute;
+  inset: 0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap: 8px;
+}
+.map-title{
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #111827;
+}
+

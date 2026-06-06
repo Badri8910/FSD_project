@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us - EduPulse Institute</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="./index.html">
+        <span class="brand-logo" aria-hidden="true">📘</span>
+        <span>EduPulse</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample" aria-controls="navbarsExample" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="./courses.html">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="./about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="./register.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-5">
+    <div class="container">
+      <div class="mb-4">
+        <h1 class="fw-bold">Contact EduPulse</h1>
+        <p class="text-muted mb-0">Send us a message. We’ll get back to you shortly.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="card shadow-sm p-4 h-100">
+            <h4 class="fw-bold mb-3">Contact Form</h4>
+
+            <form id="contactForm">
+              <div class="mb-3">
+                <label for="cname" class="form-label">Name</label>
+                <input type="text" class="form-control" id="cname" name="name" required />
+              </div>
+              <div class="mb-3">
+                <label for="cemail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="cemail" name="email" required />
+              </div>
+              <div class="mb-3">
+                <label for="cphone" class="form-label">Mobile Number</label>
+                <input type="tel" class="form-control" id="cphone" name="phone" required />
+              </div>
+              <div class="mb-3">
+                <label for="cmessage" class="form-label">Message</label>
+                <textarea class="form-control" id="cmessage" name="message" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Send Message</button>
+              <div id="contactSuccess" class="alert alert-success d-none mt-3 mb-0" role="alert">
+                Message sent successfully!
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="card shadow-sm h-100 overflow-hidden">
+            <div class="card-body">
+              <h4 class="fw-bold">Google Map Placeholder</h4>
+              <p class="text-muted">Replace this placeholder with an embedded Google Map if needed.</p>
+            </div>
+            <div class="map-placeholder">
+              <div class="map-inner">
+                <div class="map-title">Map Placeholder</div>
+                <div class="text-muted">42, Tech Avenue, Hyderabad</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 card shadow-sm p-4">
+            <h4 class="fw-bold mb-3">Address Information</h4>
+            <p class="text-muted mb-1">42, Tech Avenue, Hyderabad, TG 500081</p>
+            <p class="text-muted mb-1">Phone: +91 98765 43210</p>
+            <p class="text-muted mb-0">Email: hello@edupulse.edu</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-5">
+          <h5 class="fw-bold">EduPulse Institute</h5>
+          <p class="text-muted mb-0">Training you need. Projects you’ll be proud of.</p>
+        </div>
+        <div class="col-md-3">
+          <h6 class="fw-semibold">Address</h6>
+          <p class="text-muted mb-0">42, Tech Avenue, Hyderabad, TG 500081</p>
+        </div>
+        <div class="col-md-4">
+          <h6 class="fw-semibold">Contact</h6>
+          <p class="text-muted mb-1">Phone: +91 98765 43210</p>
+          <p class="text-muted mb-3">Email: hello@edupulse.edu</p>
+          <div class="social-links">
+            <a class="social" href="#" aria-label="Facebook">Facebook</a>
+            <a class="social" href="#" aria-label="Twitter">Twitter</a>
+            <a class="social" href="#" aria-label="LinkedIn">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-top mt-4 pt-3 d-flex flex-wrap justify-content-between gap-2">
+        <span class="text-muted">© <span id="year"></span> EduPulse. All rights reserved.</span>
+        <span class="text-muted">Built with Bootstrap</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
+

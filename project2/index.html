@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EduPulse Institute - Online Course Registration</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="./index.html">
+        <span class="brand-logo" aria-hidden="true">📘</span>
+        <span>EduPulse</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample" aria-controls="navbarsExample" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="./courses.html">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="./about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="./register.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container position-relative hero-content">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <h1 class="display-5 fw-bold mb-3">Learn. Build. Grow with EduPulse</h1>
+          <p class="lead text-light opacity-100 mb-4">
+            Upskill with practical training in Web Development, Python, Data Science, AI/ML, Java, and Cloud Computing.
+            Register online in minutes.
+          </p>
+          <div class="d-flex gap-2 flex-wrap">
+            <a class="btn btn-primary btn-lg" href="./courses.html">Explore Courses</a>
+            <a class="btn btn-outline-light btn-lg" href="./register.html">Register Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Featured Courses -->
+  <section class="py-5">
+    <div class="container">
+      <div class="d-flex align-items-end justify-content-between flex-wrap gap-3 mb-4">
+        <div>
+          <h2 class="fw-bold">Featured Courses</h2>
+          <p class="text-muted mb-0">Popular programs students are enrolling in this season.</p>
+        </div>
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <!-- Card 1 -->
+        <div class="col">
+          <div class="course-card card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=60" class="card-img-top" alt="Web Development" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Web Development</h5>
+              <p class="mb-1 text-muted">Duration: 8 Weeks</p>
+              <p class="mb-3 fw-semibold">Fee: ₹12,000</p>
+              <button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#detailsModal" data-course="Web Development" data-duration="8 Weeks" data-fee="₹12,000">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col">
+          <div class="course-card card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1581093588401-22fd7b5b5c4b?auto=format&fit=crop&w=1200&q=60" class="card-img-top" alt="Python Programming" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Python Programming</h5>
+              <p class="mb-1 text-muted">Duration: 6 Weeks</p>
+              <p class="mb-3 fw-semibold">Fee: ₹10,000</p>
+              <button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#detailsModal" data-course="Python Programming" data-duration="6 Weeks" data-fee="₹10,000">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col">
+          <div class="course-card card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=60" class="card-img-top" alt="Data Science" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Data Science</h5>
+              <p class="mb-1 text-muted">Duration: 10 Weeks</p>
+              <p class="mb-3 fw-semibold">Fee: ₹18,000</p>
+              <button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#detailsModal" data-course="Data Science" data-duration="10 Weeks" data-fee="₹18,000">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col">
+          <div class="course-card card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=60" class="card-img-top" alt="AI & Machine Learning" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">AI & Machine Learning</h5>
+              <p class="mb-1 text-muted">Duration: 12 Weeks</p>
+              <p class="mb-3 fw-semibold">Fee: ₹22,000</p>
+              <button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#detailsModal" data-course="AI & Machine Learning" data-duration="12 Weeks" data-fee="₹22,000">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="col">
+          <div class="course-card card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=1200&q=60" class="card-img-top" alt="Java Programming" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Java Programming</h5>
+              <p class="mb-1 text-muted">Duration: 7 Weeks</p>
+              <p class="mb-3 fw-semibold">Fee: ₹13,000</p>
+              <button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#detailsModal" data-course="Java Programming" data-duration="7 Weeks" data-fee="₹13,000">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="col">
+          <div class="course-card card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=60" class="card-img-top" alt="Cloud Computing" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Cloud Computing</h5>
+              <p class="mb-1 text-muted">Duration: 9 Weeks</p>
+              <p class="mb-3 fw-semibold">Fee: ₹16,000</p>
+              <button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#detailsModal" data-course="Cloud Computing" data-duration="9 Weeks" data-fee="₹16,000">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials (Carousel) -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="d-flex align-items-end justify-content-between flex-wrap gap-3 mb-4">
+        <div>
+          <h2 class="fw-bold">Student Testimonials</h2>
+          <p class="text-muted mb-0">Real feedback from our learners.</p>
+        </div>
+      </div>
+
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row g-4">
+              <div class="col-lg-4">
+                <div class="testimonial card shadow-sm h-100">
+                  <div class="card-body">
+                    <p class="mb-3">"The Web Development course made me confident in building responsive pages."</p>
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="avatar">A</div>
+                      <div>
+                        <div class="fw-semibold">Aarav Sharma</div>
+                        <div class="text-muted small">Web Development</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="testimonial card shadow-sm h-100">
+                  <div class="card-body">
+                    <p class="mb-3">"Hands-on Python projects helped me understand concepts quickly."</p>
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="avatar">M</div>
+                      <div>
+                        <div class="fw-semibold">Meera Iyer</div>
+                        <div class="text-muted small">Python Programming</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="testimonial card shadow-sm h-100">
+                  <div class="card-body">
+                    <p class="mb-3">"AI & ML sessions were practical—perfect for preparing interviews."</p>
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="avatar">R</div>
+                      <div>
+                        <div class="fw-semibold">Rohan Patel</div>
+                        <div class="text-muted small">AI & Machine Learning</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-5">
+          <h5 class="fw-bold">EduPulse Institute</h5>
+          <p class="text-muted mb-0">Training you need. Projects you’ll be proud of.</p>
+        </div>
+        <div class="col-md-3">
+          <h6 class="fw-semibold">Address</h6>
+          <p class="text-muted mb-0">42, Tech Avenue, Hyderabad, TG 500081</p>
+        </div>
+        <div class="col-md-4">
+          <h6 class="fw-semibold">Contact</h6>
+          <p class="text-muted mb-1">Phone: +91 98765 43210</p>
+          <p class="text-muted mb-3">Email: hello@edupulse.edu</p>
+          <div class="social-links">
+            <a class="social" href="#" aria-label="Facebook">Facebook</a>
+            <a class="social" href="#" aria-label="Twitter">Twitter</a>
+            <a class="social" href="#" aria-label="LinkedIn">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-top mt-4 pt-3 d-flex flex-wrap justify-content-between gap-2">
+        <span class="text-muted">© <span id="year"></span> EduPulse. All rights reserved.</span>
+        <span class="text-muted">Built with Bootstrap</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Details Modal -->
+  <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel">Course Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h4 class="mb-2" id="modalCourseName">Course Name</h4>
+          <p class="mb-1 text-muted" id="modalDuration">Duration: </p>
+          <p class="mb-0 fw-semibold" id="modalFee">Fee: </p>
+          <hr />
+          <p class="text-muted mb-0">You’ll learn key concepts with real projects and guided practice.</p>
+        </div>
+        <div class="modal-footer">
+          <a href="./register.html" class="btn btn-primary">Register for this Course</a>
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
+
